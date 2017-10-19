@@ -3,16 +3,11 @@
 function Letter(letters) {
   this.letters = letters;
   this.show = false;
-  this.renderLetter = function() {
-    if(this.letters = "") {
-      this.show = true
-      return " "
-    }
-    if(this.show = false) {
-      return "_"
+  this.renderLetter = function(letters) {
+    if(this.show = false) { //If a letter does not appear put show underscore.
+      return "_";
     }else
-    return this.letters;
-    }
+    return letters;
   }
 }
 module.exports = Letter;
