@@ -1,0 +1,1 @@
+//This will contain word logic and data of current word.
