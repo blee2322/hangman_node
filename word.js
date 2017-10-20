@@ -18,24 +18,28 @@ function Word (wordChoice) {
         this.lett.push(new Letter(this.wordChoice[i]));
     }
   }
-  this.
 
   //This will check the indexOf the chosen word in the array. A value of -1 means the letter does not exist in word object.
-  this.validateLetter = function(letter) {
+  this.validateLetter = function(letterGuess) {
     this.incorrect = true
     this.validLetter = false
     //Does letter any instance of the letter exist in the word?
-    if(this.guesses.indexOf(letter) != -1) {
+    if(this.guesses.indexOf(letterGuess) != -1) {//
       this.validLetter = true;
-    } else { //
-      this.guesses.push(letter);
+    } else {
+      //this will push  
+      this.guesses.push(letterGuess);
       for (var i = 0; i < this.lett.length; i++) {
-        if(this.lett[i] = letter) {
+        if(this.lett[i] === letterGuess) {
           this.incorrect = false;
         }else
+        //If the guess is incorrect decrease guessesLeft by one
           this.inccorrect = true;
           this.guessesLeft --
       }
     }
   }
+//This method function will find the current word
+  this.validateWord = function()
+
 };
