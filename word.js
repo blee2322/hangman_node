@@ -26,7 +26,7 @@ function Word (wordChoice) {
     //Does letter any instance of the letter exist in the word?
     if(this.guesses.indexOf(letterGuess) != -1) {//
       this.validLetter = true;
-    } else {
+    } else
       //this will push  
       this.guesses.push(letterGuess);
       for (var i = 0; i < this.lett.length; i++) {
@@ -37,9 +37,9 @@ function Word (wordChoice) {
           this.inccorrect = true;
           this.guessesLeft --
       }
-    }
   }
+}
 //This method function will find the current word
-  this.validateWord = function()
+//   this.validateWord = function()
 
-};
+// };
