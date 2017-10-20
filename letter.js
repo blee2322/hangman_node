@@ -3,13 +3,14 @@
 function Letter(letters) {
   this.letters = letters;
   this.show = false;
-  this.renderLetter = function(letters) {
-    if(this.show = false) { //If a letter does not appear put show underscore.
+  this.renderLetter = function() {
+    if(this.show === false) { //If a letter does not appear put show underscore.
       return "_";
     }else
     return letters;
   }
 }
+
 module.exports = Letter;
 
 
