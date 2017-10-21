@@ -4,13 +4,14 @@ function Letter(letters) {
   this.letters = letters;
   this.show = false;
   this.renderLetter = function() {
-    if(this.show === false) { //If a letter does not appear put show underscore.
+    if(this.show === false) { //If word doesn't appear "_" will show. 
       return "_";
     }else
     return letters;
   }
 }
-
+// var l = new Letter("l");
+// console.log(l.letters);
 module.exports = Letter;
 
 
