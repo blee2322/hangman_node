@@ -8,6 +8,7 @@ function Word (wordChoice) {
   this.wordChoice = wordChoice;
   this.lett = [];
   this.found = false;
+  this.guessesLeft = 15;
 //This for loop will push letters into the lett array equal the length of the word.
   this.getLet = function() { 
     for(var i = 0; i < this.wordChoice.length; i++) {
@@ -31,7 +32,8 @@ function Word (wordChoice) {
     for(var i = 0; i < this.lett.length; i++){
       if(this.lett[i].letters === guessLetter)
       this.lett[i].show = true
-    } 
+    }else 
+    guessesLeft --
   }
 
   this.renderWord = function() {
@@ -39,6 +41,7 @@ function Word (wordChoice) {
     
     for(var i = 0; i < this.lett.length; i++){
       var currentLetter = this.lett[i].renderLetter();
+      console.log(currentLetter);
       str += currentLetter;
     }
     return str;
