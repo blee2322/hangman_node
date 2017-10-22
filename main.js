@@ -2,6 +2,8 @@
 var inquirer = require("inquirer");
 var randomWord = require("./hangmangame.js");
 var checkWord = require("./word.js");
+console.log(checkWord);
+console.log(randomWord);
 //There will be a function that will get a random word for the user to guess at the beginning of the game.
 var wins = 0;
 var losses = 0;
@@ -9,7 +11,7 @@ startGame();
 
 function startGame () {
   var word = randomWord.getMovie;
-  word.renderWord();
+  word.checkWord
   getUserGuess(word);
 
 }
@@ -25,7 +27,7 @@ function getUserGuess(word) {
 
   ]).then(function(guess){
 
-      word.renderWord();
+      word.renderWord;
 
       if(!word.found) {
         if(word.guessesLeft > 0){
