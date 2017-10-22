@@ -46,6 +46,7 @@ function Word (wordChoice) {
       str += currentLetter;
     }
     return str;
+    console.log(str);
 
   }
 

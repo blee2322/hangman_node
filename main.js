@@ -10,8 +10,8 @@ var losses = 0;
 startGame();
 
 function startGame () {
-  var word = randomWord.getMovie;
-  word.checkWord
+  var word = word.getMovie();
+  console.log(word)
   getUserGuess(word);
 
 }
