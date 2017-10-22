@@ -30,10 +30,11 @@ function Word (wordChoice) {
 //does the letter exist in the randomly chosen word?
   this.validateLetter = function(guessLetter) {
     for(var i = 0; i < this.lett.length; i++){
-      if(this.lett[i].letters === guessLetter)
+      if(this.lett[i].letters === guessLetter) {
       this.lett[i].show = true
-    }else 
-    guessesLeft --
+      }else 
+      guessesLeft --
+    }
   }
 
   this.renderWord = function() {

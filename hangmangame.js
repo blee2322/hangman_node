@@ -9,7 +9,7 @@ var getMovie = function() {
 }
 
 
-module.exports = getMovie;
+module.exports = getMovie();
 
 
 //A constructor function that will choose a random word.
