@@ -3,22 +3,47 @@
 //Function that displays text
 var letter = require ("./letter.js");
 
-//Creates New Chosen Word
+//Creates New Chosen Word blanks
 function Word (wordChoice) {
   this.wordChoice = wordChoice;
   this.lett = [];
-  this.guessesLeft = 15;
-  this.lttrguessed = false;
+  this.found = false;
 //This for loop will push letters into the lett array equal the length of the word.
   this.getLet = function() { 
     for(var i = 0; i < this.wordChoice.length; i++) {
         this.lett.push(new letter(this.wordChoice[i]));
+        console.log(w.lett[i].letters);
     }
   };
+  //Did we find the word?
+  this.validateWord = function() {
 
-module.exports = Word; 
+    if(this.lett.every(function(currentLetter) {
+      return currentLetter.show === true;
+    })){
 
+    this.found = true;
+    return true;
+  }
+  }
+//does the letter exist in the randomly chosen word?
+  this.validateLetter = function(guessLetter) {
+    for(var i = 0; i < this.lett.length; i++){
+      if(this.lett[i].letters === guessLetter)
+      this.lett[i].show = true
+    } 
+  }
 
-var w = new Word("Alien");
-w.getLet();
-console.log(w.lett);
+  this.renderWord = function() {
+    var str = "";
+    
+    for(var i = 0; i < this.lett.length; i++){
+      var currentLetter = this.lett[i].renderLetter();
+      str += currentLetter;
+    }
+    return str;
+
+  }
+
+}
+
