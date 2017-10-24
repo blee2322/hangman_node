@@ -8,20 +8,21 @@ function Word (wordChoice) {
   var self = this
   var lett = [];
   var wordArray = wordChoice.split("");
+  console.log(wordArray);
   self.show = false;
   self.guessesLeft = 15;
 //self for loop will push letters into the lett array equal the length of the word.
   wordArray.forEach(function(letters){
     lett.push(new Letter(letters));
-    // console.log(lett);
+    // console.log(lett)
   });
 
   self.renderWord = function() {
     var wordString = "";
     lett.forEach(function(currentLetter){
-      wordString += currentLetter.renderWord();  
+      wordString += currentLetter.renderLetter();  
     });
-    console.log("" + wordString +"Guesses Left: " + self.guessesLeft);
+    console.log("  " + wordString + " Guesses Left: " + self.guessesLeft);
   }
   
   self.validateLetter = function(userGuess) {

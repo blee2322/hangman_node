@@ -8,12 +8,14 @@ var getMovie = function() {
  var randomMovie = movieArray[Math.floor(Math.random() * movieArray.length)];
 
  var word = new Word(randomMovie);
+
+ word.renderWord();
   // console.log(randomMovie);
   return randomMovie
 }
 
 
-module.exports.getMovie = getMovie;
+module.exports = getMovie;
 
 
 //A constructor function that will choose a random word.
