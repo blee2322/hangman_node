@@ -1,4 +1,5 @@
 var Word = require("./word.js");
+console.log(Word);
 
 var getMovie = function() {
 
@@ -12,7 +13,7 @@ var getMovie = function() {
 }
 
 
-module.exports = getMovie;
+module.exports.getMovie = getMovie;
 
 
 //A constructor function that will choose a random word.

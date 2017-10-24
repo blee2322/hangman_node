@@ -1,18 +1,17 @@
 //This will hold the prompt. This will be the file we execute in Node.
 var inquirer = require("inquirer");
 var randomWord = require("./hangmangame.js");
-var checkWord = require("./word.js");
-console.log(checkWord);
 console.log(randomWord);
-//There will be a function that will get a random word for the user to guess at the beginning of the game.
-var wins = 0;
-var losses = 0;
+// There will be a function that will get a random word for the user to guess at the beginning of the game.
 startGame();
 
 function startGame () {
-  var word = word.getMovie();
+  var newMovie = new getMovie();
+  var word = newMovie.getMovie();
   console.log(word)
+  word.renderWord();
   getUserGuess(word);
+ 
 
 }
 
@@ -27,16 +26,16 @@ function getUserGuess(word) {
 
   ]).then(function(guess){
 
-      word.renderWord;
+      word.renderWord(guess.letter);
 
-      if(!word.found) {
+      if(!word.show) {
         if(word.guessesLeft > 0){
           getUserGuess(word);
         }else
           startGame();
         }   
-      if(word.found){
-        startGame()
+      if(word.show){
+        startGame();
       }
     })
 }

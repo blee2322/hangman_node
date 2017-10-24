@@ -5,28 +5,29 @@ var Letter = require ("./letter.js");
 console.log(Letter);
 //Creates New Chosen Word blanks
 function Word (wordChoice) {
+  var self = this
   var lett = [];
   var wordArray = wordChoice.split("");
-  this.show = false;
-  this.guessesLeft = 15;
-//This for loop will push letters into the lett array equal the length of the word.
+  self.show = false;
+  self.guessesLeft = 15;
+//self for loop will push letters into the lett array equal the length of the word.
   wordArray.forEach(function(letters){
     lett.push(new Letter(letters));
-    console.log(lett);
+    // console.log(lett);
   });
 
-  this.renderWord = function() {
+  self.renderWord = function() {
     var wordString = "";
     lett.forEach(function(currentLetter){
       wordString += currentLetter.renderWord();  
     });
-    console.log("" + wordString +"Guesses Left: " + this.guessesLeft);
+    console.log("" + wordString +"Guesses Left: " + self.guessesLeft);
   }
   
-  this.validateLetter = function(userGuess) {
-    this.guessesLeft --;
+  self.validateLetter = function(userGuess) {
+    self.guessesLeft --;
     //wordChoice.show will equal true when all the letters are guessed.
-    this.show = lett.every(function(currentLetter) {
+    self.show = lett.every(function(currentLetter) {
       if(userGuess === currentLetter.letters){
         currentLetter.show = true;
       }
@@ -35,5 +36,7 @@ function Word (wordChoice) {
   }
 }
 
-var w = "Alien";
-Word(w);
+module.exports = Word;
+
+// var w = "Alien";
+// Word(w);
