@@ -7,7 +7,7 @@ function Letter(letters) {
     if(this.show === false) { //If word doesn't appear "_" will show. 
       return "_";
     }else
-    return letters;
+    return this.letters;
   }
 }
 // var l = new Letter("l");
